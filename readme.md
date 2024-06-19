@@ -1,7 +1,6 @@
-![Submission Manager](https://www.submissionmanager.net/info/logo.gif)
+# Lumiere Review Submission Manager
 
-# Submission Manager
-**https://www.submissionmanager.net**
+Inspired by Devin Emke's Submissions Manager https://www.submissionmanager.net. Original code can be found in https://github.com/devinemke/submgr. 
 
 **Submission Manager** is an online system for accepting and managing written submissions for magazines and presses. It’s easy to use and flexible enough to work with any submission and reading process. **Submission Manager** allows you to:
 
@@ -27,6 +26,9 @@
 * see which staff members have which submissions
 
 This user-friendly system allows **submitters** to log their own address information into the database and log into their account to see the status of their submission. Upon submitting, all submitters receive automatic emails confirming that a submission has been received.
+
+# Updates specific for Lumiere
+
 
 System Requirements:
 
