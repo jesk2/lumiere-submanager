@@ -300,13 +300,13 @@ elseif (isset($_SESSION['contact_reset']))
 		$email = htmlspecialchars($_SESSION['contact_reset']['email']); // to pre-populate login form
 		$display_login = true;
 		kill_session('regenerate'); // session needed for form_hash()
-		$error_output = '<img src="arrow_left_2.png" alt="arrow left" width="16" height="13" style="vertical-align: middle;"> Your password has been updated successfully. Please log in to access your account.';
+		$error_output = '<img src="./media/arrow_left_2.png" alt="arrow left" width="16" height="13" style="vertical-align: middle;"> Your password has been updated successfully. Please log in to access your account.';
 		exit_error();
 	}
 }
 else
 {
-	$error_output = '<img src="arrow_left_2.png" alt="arrow left" width="16" height="13" style="vertical-align: middle;"> To access this page you must first login using the form on the left.';
+	$error_output = '<img src="./media/arrow_left_2.png" alt="arrow left" width="16" height="13" style="vertical-align: middle;"> To access this page you must first login using the form on the left.';
 	exit_error();
 }
 

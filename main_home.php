@@ -52,7 +52,7 @@ if ($submit == 'continue')
 	}
 	echo '<b>[ submission successfully received ]</b>';
 	if ($config['submission_text']) {echo '<br><br>Dear ' . $_SESSION['post_display']['first_name'] . ',<br><br>' . replace_placeholders($config['submission_text']);}
-	echo '<br><br>Your account is now automatically setup.<br><img src="arrow_left_2.png" alt="arrow left" width="16" height="13" style="vertical-align: middle;"> You can use the form on the left to log in to your account using your email address and password.';
+	echo '<br><br>Your account is now automatically setup.<br><img src="./media/arrow_left_2.png" alt="arrow left" width="16" height="13" style="vertical-align: middle;"> You can use the form on the left to log in to your account using your email address and password.';
 	if ($config['submission_limit'] != 1)
 	{
 		echo '<br><br><a href="' . $_SERVER['PHP_SELF'] . '?page=login&module=submit&first_submission=1"><b>submit another?</b></a>';

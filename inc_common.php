@@ -1612,7 +1612,7 @@ function form_check()
 			{
 				if ($page != 'login')
 				{
-					echo '<p>The email address that you entered, <b>' . $email . '</b>, is already in our database.<br><img src="arrow_left_2.png" alt="arrow left" width="16" height="13" style="vertical-align: middle;"> If you have already have an account, please login using the form to the left.</p>';
+					echo '<p>The email address that you entered, <b>' . $email . '</b>, is already in our database.<br><img src="./media/arrow_left_2.png" alt="arrow left" width="16" height="13" style="vertical-align: middle;"> If you have already have an account, please login using the form to the left.</p>';
 					$GLOBALS['email'] = $_POST['email'];
 					exit_error();
 				}

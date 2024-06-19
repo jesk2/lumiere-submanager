@@ -1,8 +1,8 @@
 <?php
 $config_db = array(
-'host' => '[host]',
-'username' => '[username]',
-'password' => '[password]',
+'host' => 'localhost',
+'username' => 'jk',
+'password' => 'jk',
 'name' => '[name]',
 'port' => '[port]'
 );

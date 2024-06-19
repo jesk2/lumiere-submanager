@@ -545,7 +545,7 @@ else // if staff login
 		{
 			$offset_first = 0;
 			if ($offset < $config['pagination_limit']) {$offset_previous = 0;} else {$offset_previous = $offset - $config['pagination_limit'];}
-			$output .= '<a href="' . $url . '&offset=' . $offset_first . '"><img src="arrow_left_2.png" width="16" height="13" alt="first"></a> <a href="' . $url . '&offset=' . $offset_previous . '"><img src="arrow_left_1.png" width="8" height="13" alt="previous"></a>';
+			$output .= '<a href="' . $url . '&offset=' . $offset_first . '"><img src="./media/arrow_left_2.png" width="16" height="13" alt="first"></a> <a href="' . $url . '&offset=' . $offset_previous . '"><img src="./media/arrow_left_1.png" width="8" height="13" alt="previous"></a>';
 		}
 
 		$output .= '</td><td style="width: 50%; text-align: left; padding-left: 5px;">';
@@ -554,7 +554,7 @@ else // if staff login
 		{
 			$offset_next = $offset + $config['pagination_limit'];
 			$offset_last = $result_count - $config['pagination_limit'];
-			$output .= '<a href="' . $url . '&offset=' . $offset_next . '"><img src="arrow_right_1.png" width="8" height="13" alt="next"></a> <a href="' . $url . '&offset=' . $offset_last . '"><img src="arrow_right_2.png" width="16" height="13" alt="last"></a>';
+			$output .= '<a href="' . $url . '&offset=' . $offset_next . '"><img src="./media/arrow_right_1.png" width="8" height="13" alt="next"></a> <a href="' . $url . '&offset=' . $offset_last . '"><img src="./media/arrow_right_2.png" width="16" height="13" alt="last"></a>';
 		}
 
 		$output .= '
@@ -975,7 +975,7 @@ else // if staff login
 						}
 
 						$header1 = display('html');
-						if (in_array($_SESSION['contact']['access'], $access_grouping['admin_editor'])) {$header1 .= '<br><a href="' . $_SERVER['PHP_SELF'] . '?page=' . $page . '&module=contacts&single_contact=1&contact_id=' . $_REQUEST['contact_id'] . '"><img src="button_update.png" width="12" height="13" alt="update" style="vertical-align: middle;"> <b>update this contact</b></a><br>';}
+						if (in_array($_SESSION['contact']['access'], $access_grouping['admin_editor'])) {$header1 .= '<br><a href="' . $_SERVER['PHP_SELF'] . '?page=' . $page . '&module=contacts&single_contact=1&contact_id=' . $_REQUEST['contact_id'] . '"><img src="./media/button_update.png" width="12" height="13" alt="update" style="vertical-align: middle;"> <b>update this contact</b></a><br>';}
 						$header1 .= '<br>total: <b>' . $result_count . '</b>';
 					}
 					else
@@ -1040,8 +1040,8 @@ else // if staff login
 				echo '<th>' . $value;
 				if ($value == 'date / time' && !$single_display && isset($_SESSION['criteria']['search_date_order']))
 				{
-					if ($_SESSION['criteria']['search_date_order'] == 'ascending') {echo ' <img src="arrow_up_1.png" width="13" height="8" alt="arrow up">';}
-					if ($_SESSION['criteria']['search_date_order'] == 'descending') {echo ' <img src="arrow_down_1.png" width="13" height="8" alt="arrow down">';}
+					if ($_SESSION['criteria']['search_date_order'] == 'ascending') {echo ' <img src="./media/arrow_up_1.png" width="13" height="8" alt="arrow up">';}
+					if ($_SESSION['criteria']['search_date_order'] == 'descending') {echo ' <img src="./media/arrow_down_1.png" width="13" height="8" alt="arrow down">';}
 				}
 				echo '</th>';
 			}
@@ -1086,7 +1086,7 @@ else // if staff login
 				$class = 'submission';
 
 				$submission_id_display = '<a href="' . $_SERVER['PHP_SELF'] . '?page=' . $page . '&module=' . $module . '&submission_id=' . $submission_id . '">' . $submission_id . '</a>';
-				if (in_array($_SESSION['contact']['access'], $access_grouping['admin_editor']) && $single_display) {$submission_id_display .= ' <a href="#" id="update_submission_' . $submission_id . '"><img src="button_update.png" alt="update" width="12" height="13"></a> <a href="' . $_SERVER['PHP_SELF'] . '?page=' . $page . '&module=submissions&submodule=delete&submission_id=' . $submission_id . '" id="delete_submission_' . $submission_id . '"><img src="button_delete.png" alt="delete" width="11" height="13"></a>';}
+				if (in_array($_SESSION['contact']['access'], $access_grouping['admin_editor']) && $single_display) {$submission_id_display .= ' <a href="#" id="update_submission_' . $submission_id . '"><img src="./media/button_update.png" alt="update" width="12" height="13"></a> <a href="' . $_SERVER['PHP_SELF'] . '?page=' . $page . '&module=submissions&submodule=delete&submission_id=' . $submission_id . '" id="delete_submission_' . $submission_id . '"><img src="./media/button_delete.png" alt="delete" width="11" height="13"></a>';}
 				$date_time = timezone_adjust($date_time);
 				if ($config['show_date_paid'])
 				{
@@ -1105,7 +1105,7 @@ else // if staff login
 				{
 					if ($writer) {$writer = '<span style="color: red;">' . $writer . '</span>';} else {$writer = $value['contact']['first_name'] . ' ' . $value['contact']['last_name'];}
 					$writer = '<a href="' . $_SERVER['PHP_SELF'] . '?page=' . $page . '&module=' . $module . '&contact_id=' . $submitter_id . '" id="writer_' . $submission_id . '">' . $submitter_id . ' - ' . $writer . '</a>';
-					if (in_array($_SESSION['contact']['access'], $access_grouping['admin_editor'])) {$writer = '<a href="' . $_SERVER['PHP_SELF'] . '?page=' . $page . '&module=contacts&single_contact=1&contact_id=' . $submitter_id . '"><img src="button_update.png" alt="update" width="12" height="13"></a> ' . $writer;}
+					if (in_array($_SESSION['contact']['access'], $access_grouping['admin_editor'])) {$writer = '<a href="' . $_SERVER['PHP_SELF'] . '?page=' . $page . '&module=contacts&single_contact=1&contact_id=' . $submitter_id . '"><img src="./media/button_update.png" alt="update" width="12" height="13"></a> ' . $writer;}
 				}
 				if ($genre_id && isset($genres['all'][$genre_id])) {$genre = $genres['all'][$genre_id]['name'];} else {$genre = '&nbsp;';}
 				if (file_exists($config['upload_path'] . date('Y', strtotime($value['date_time'])) . '/' . $submission_id . '.' . $ext))
@@ -1218,7 +1218,7 @@ else // if staff login
 							extract($value);
 
 							$action_id_display = $action_id;
-							if (in_array($_SESSION['contact']['access'], $access_grouping['admin_editor'])) {$action_id_display .= ' <a href="#" id="update_action_' . $action_id . '"><img src="button_update.png" alt="update" width="12" height="13"></a> <a href="' . $_SERVER['PHP_SELF'] . '?page=' . $page . '&module=submissions&submodule=delete&action_id=' . $action_id . '" id="delete_action_' . $action_id . '"><img src="button_delete.png" alt="delete" width="11" height="13"></a>';}
+							if (in_array($_SESSION['contact']['access'], $access_grouping['admin_editor'])) {$action_id_display .= ' <a href="#" id="update_action_' . $action_id . '"><img src="./media/button_update.png" alt="update" width="12" height="13"></a> <a href="' . $_SERVER['PHP_SELF'] . '?page=' . $page . '&module=submissions&submodule=delete&action_id=' . $action_id . '" id="delete_action_' . $action_id . '"><img src="./media/button_delete.png" alt="delete" width="11" height="13"></a>';}
 							$date_time = timezone_adjust($date_time);
 							if (isset($reader_id) && $reader_id)
 							{
@@ -2393,7 +2393,7 @@ else // if staff login
 
 					if (in_array($_SESSION['contact']['access'], $access_grouping['admin_editor']))
 					{
-						echo '<a href="' . $_SERVER['PHP_SELF'] . '?page=' . $page . '&module=' . $module . '&submodule=insert"><img src="button_insert.png" alt="insert" width="13" height="12"> <b>insert a new contact</b></a>';
+						echo '<a href="' . $_SERVER['PHP_SELF'] . '?page=' . $page . '&module=' . $module . '&submodule=insert"><img src="./media/button_insert.png" alt="insert" width="13" height="12"> <b>insert a new contact</b></a>';
 					}
 
 				echo '
@@ -2584,8 +2584,8 @@ else // if staff login
 					{
 						echo '
 						<tr>
-						<td class="row_left">'; if ($contact_id == $min_max['contacts']['min_id']) {echo '';} else {echo '<a href="' . $_SERVER['PHP_SELF'] . '?page=' . $page . '&module=' . $module . '&contact_id=' . $min_max['contacts']['min_id'] . '"><img src="arrow_left_2.png" width="16" height="13" alt="first"></a> <a href="' . $_SERVER['PHP_SELF'] . '?page=' . $page . '&module=' . $module . '&contact_id=' . $prev_contact_id . '"><img src="arrow_left_1.png" width="8" height="13" alt="previous"></a>';} echo '</td>
-						<td>'; if ($contact_id == $min_max['contacts']['max_id']) {echo '';} else {echo '<a href="' . $_SERVER['PHP_SELF'] . '?page=' . $page . '&module=' . $module . '&contact_id=' . $next_contact_id . '"><img src="arrow_right_1.png" width="8" height="13" alt="next"></a> <a href="' . $_SERVER['PHP_SELF'] . '?page=' . $page . '&module=' . $module . '&contact_id=' . $min_max['contacts']['max_id'] . '"><img src="arrow_right_2.png" width="16" height="13" alt="last"></a>';} echo '</td>
+						<td class="row_left">'; if ($contact_id == $min_max['contacts']['min_id']) {echo '';} else {echo '<a href="' . $_SERVER['PHP_SELF'] . '?page=' . $page . '&module=' . $module . '&contact_id=' . $min_max['contacts']['min_id'] . '"><img src="./media/arrow_left_2.png" width="16" height="13" alt="first"></a> <a href="' . $_SERVER['PHP_SELF'] . '?page=' . $page . '&module=' . $module . '&contact_id=' . $prev_contact_id . '"><img src="./media/arrow_left_1.png" width="8" height="13" alt="previous"></a>';} echo '</td>
+						<td>'; if ($contact_id == $min_max['contacts']['max_id']) {echo '';} else {echo '<a href="' . $_SERVER['PHP_SELF'] . '?page=' . $page . '&module=' . $module . '&contact_id=' . $next_contact_id . '"><img src="./media/arrow_right_1.png" width="8" height="13" alt="next"></a> <a href="' . $_SERVER['PHP_SELF'] . '?page=' . $page . '&module=' . $module . '&contact_id=' . $min_max['contacts']['max_id'] . '"><img src="./media/arrow_right_2.png" width="16" height="13" alt="last"></a>';} echo '</td>
 						</tr>
 						';
 					}
@@ -2849,7 +2849,7 @@ else // if staff login
 
 						echo '
 						<table class="padding_lr_5">
-						<tr><td>&nbsp;</td><td><a href="' . $_SERVER['PHP_SELF'] . '?page=' . $page . '&module=' . $module . '&report=' . $report . '&date_report=' . $date_prev . '"><img src="arrow_left_1.png" width="8" height="13" alt="previous" style="margin-right: 2px;"></a> <a href="' . $_SERVER['PHP_SELF'] . '?page=' . $page . '&module=' . $module . '&report=' . $report . '&date_report=' . $date_next . '"><img src="arrow_right_1.png" width="8" height="13" alt="next" style="margin-left: 2px;"></a></td></tr>
+						<tr><td>&nbsp;</td><td><a href="' . $_SERVER['PHP_SELF'] . '?page=' . $page . '&module=' . $module . '&report=' . $report . '&date_report=' . $date_prev . '"><img src="./media/arrow_left_1.png" width="8" height="13" alt="previous" style="margin-right: 2px;"></a> <a href="' . $_SERVER['PHP_SELF'] . '?page=' . $page . '&module=' . $module . '&report=' . $report . '&date_report=' . $date_next . '"><img src="./media/arrow_right_1.png" width="8" height="13" alt="next" style="margin-left: 2px;"></a></td></tr>
 						<tr><td><label for="date" id="label_date">date:</label></td><td><input type="text" id="date" name="date_report" value="' . $date_report . '" style="width: 100px;"> <span class="small">(YYYY-MM-DD)</span></td></tr>
 						<tr><td>&nbsp;</td><td><input type="submit" name="submit" value="show report" class="form_button" style="margin-top: 5px;"></td></tr>
 						</table>
@@ -3835,7 +3835,7 @@ else // if staff login
 
 							echo '
 							<tr>
-							<td style="text-align: center;"><a href="' . $_SERVER['PHP_SELF'] . '?page=' . $page . '&module=' . $module . '&submodule=' . $submodule . '&ext=' . urlencode($value) . '&delete=1" id="file_type_' . $value . '" class="file_type"><img src="button_delete.png" alt="delete" width="11" height="13"></a></td>
+							<td style="text-align: center;"><a href="' . $_SERVER['PHP_SELF'] . '?page=' . $page . '&module=' . $module . '&submodule=' . $submodule . '&ext=' . urlencode($value) . '&delete=1" id="file_type_' . $value . '" class="file_type"><img src="./media/button_delete.png" alt="delete" width="11" height="13"></a></td>
 							<td><input type="text" name="file_types[' . $value . ']" value="' . $value . '" maxlength="10" style="width: 100px;"></td>
 							</tr>
 							';
@@ -4024,7 +4024,7 @@ else // if staff login
 
 							echo '
 							<tr style="text-align: center;">
-							<td style="text-align: right; white-space: nowrap;">' . $key . ' <a href="' . $_SERVER['PHP_SELF'] . '?page=' . $page . '&module=' . $module . '&submodule=' . $submodule . '&genre_id=' . $key . '&delete=1" id="genre_' . $key . '" class="genre"><img src="button_delete.png" alt="delete" width="11" height="13"></a></td>
+							<td style="text-align: right; white-space: nowrap;">' . $key . ' <a href="' . $_SERVER['PHP_SELF'] . '?page=' . $page . '&module=' . $module . '&submodule=' . $submodule . '&genre_id=' . $key . '&delete=1" id="genre_' . $key . '" class="genre"><img src="./media/button_delete.png" alt="delete" width="11" height="13"></a></td>
 							<td><input type="text" id="genres_' . $key . '_name" name="genres[' . $key . '][name]" value="' . $name . '" maxlength="50" class="' . $class['name'] . '"></td>
 							<td><input type="text" id="genres_' . $key . '_submission_limit" name="genres[' . $key . '][submission_limit]" value="' . $submission_limit . '" maxlength="3" style="width: 50px;" class="' . $class['submission_limit'] . '"></td>
 							<td><input type="text" id="genres_' . $key . '_redirect_url" name="genres[' . $key . '][redirect_url]" value="' . $redirect_url . '"></td>
@@ -4151,7 +4151,7 @@ else // if staff login
 
 									echo '
 									<tr>
-									<td style="text-align: right; white-space: nowrap;">' . $payment_var_id . ' <a href="' . $_SERVER['PHP_SELF'] . '?page=' . $page . '&module=' . $module . '&submodule=' . $submodule . '&payment_var_id=' . $payment_var_id . '&delete=1" id="payment_var_' . $payment_var_id . '" class="payment_var"><img src="button_delete.png" alt="delete" width="11" height="13"></a></td>
+									<td style="text-align: right; white-space: nowrap;">' . $payment_var_id . ' <a href="' . $_SERVER['PHP_SELF'] . '?page=' . $page . '&module=' . $module . '&submodule=' . $submodule . '&payment_var_id=' . $payment_var_id . '&delete=1" id="payment_var_' . $payment_var_id . '" class="payment_var"><img src="./media/button_delete.png" alt="delete" width="11" height="13"></a></td>
 									<td><input type="text" id="payment_vars_' . $payment_var_id . '_name" name="payment_vars[' . $payment_var_id . '][name]" value="' . $name . '" maxlength="255"></td>
 									<td><input type="text" id="payment_vars_' . $payment_var_id . '_value" name="payment_vars[' . $payment_var_id . '][value]" value="' . $value . '" maxlength="255"><input type="hidden" id="payment_vars_' . $payment_var_id . '_direction" name="payment_vars[' . $payment_var_id . '][direction]" value="' . $arg . '"></td>
 									<td style="background-color: ' . $config['color_background'] . ';">&nbsp;</td>

@@ -10,7 +10,7 @@ echo '
 </table>
 <hr>
 <div class="small" style="text-align: right;">
-<b>' . $submgr_title . '</b><br>version ' . $GLOBALS['version_local'] . '<br>&copy;' . $gm_year . ' Devin Emke
+<b>' . 'Inspired by Submission Manager' . '</b><br>version ' . $GLOBALS['version_local'] . '<br>&copy;' . $gm_year . ' Jessica Kim
 </div>
 </body>
 </html>';

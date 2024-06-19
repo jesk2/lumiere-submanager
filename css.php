@@ -1,7 +1,7 @@
 <?php
 if (count(get_included_files()) == 1) {header('location: http://' . $_SERVER['HTTP_HOST']); exit();}
 
-if (isset($config['font_size']) && $config['font_size']) {$font_size = $config['font_size'];} else {$font_size = 10;}
+if (isset($config['font_size']) && $config['font_size']) {$font_size = $config['font_size'];} else {$font_size = 12;}
 $font_size_plus = $font_size + 2;
 $font_size_plus10 = $font_size + 10;
 $font_size_minus = $font_size - 2;
@@ -165,7 +165,7 @@ textarea
 	font-family: ' . $config['fonts'] . ';
 	border: 2px solid ' . $config['color_text'] . ';
 	border-radius: ' . $config['border_radius'] . 'px;
-	width: 100px;
+	width: 200px;
 }
 
 input:disabled, select:disabled, textarea:disabled, .form_button:disabled
@@ -256,6 +256,7 @@ if ($page == 'login' && ($module == 'account' || $module == 'submissions' || $mo
 		overflow: auto;
 		resize: both;
 	}
+
 	';
 }
 
